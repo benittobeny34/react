@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Images from './components/Images'
 
 const App = () => {
@@ -6,6 +6,10 @@ const App = () => {
    const [title,setTitle] = useState('hello React')
 
    const [isShowing,setIsShowing] = useState(false)
+ //This is act as ComponentDidMount in rfc
+   useEffect(()=>{
+      console.log('app mounted')
+   }); 
 
    const  handleClick = () => {   // NO need to bind if we use arrow function
          setIsShowing(!isShowing)
@@ -14,6 +18,7 @@ const App = () => {
     return (
         <div className = "App container" >
             <section className="d-flex justify-content-center">
+            {console.log('rendered')}
               <button className = "p-1 text-primary " onClick={handleClick}>toggle image < /button>
             </section>
 
