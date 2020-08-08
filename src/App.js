@@ -1,27 +1,18 @@
 import React, { Component } from 'react';
-import image from './kane.jpg'
+import Images from './components/Images'
+
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {isShowing:false};
-    // this.handleClick = this.handleClick.bind(this);
+    
     console.log('constructor executed')
   }
   handleClick = () => {   // NO need to bind if we use arrow function
          this.setState({isShowing:!this.state.isShowing})
   }
 
-  // handleClick() {  // need to bind this keyword to this function in constructor
-  //   this.setState({isShowing:!this.state.isShowing})
-  // }
 
-  componentDidMount(){
-     console.log('app mounted')
-  }
-
-  componentWillUnMount(){
-    
-  }
     render() {
       console.log('app rendered')
         return (
@@ -32,7 +23,7 @@ class App extends Component {
 
             <section className = " py-2 d-flex justify-content-center" >
                {
-                this.state.isShowing ? (<img src={image} alt="missing" />):("")
+                this.state.isShowing ? (<Images/>):("")
                }
             </section> 
           < /div>);
