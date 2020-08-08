@@ -19,7 +19,7 @@ class App extends Component {
      console.log('app mounted')
   }
 
-  componentWillUnMount(){
+  componentWillUnmount(){
     
   }
     render() {
